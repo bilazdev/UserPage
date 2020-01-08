@@ -1,0 +1,20 @@
+<div class="navBar">
+<button [routerLink]="['/listusers']" *ngIf="userData.isExsited()" class="rightButton" mat-raised-button color="primary">{{"listAllUsers" | translate}}</button>
+<mat-menu #appMenu="matMenu">
+  <button *ngIf="userData.isExsited()" [routerLink]="['/profile']" mat-menu-item>{{"profile" | translate}}</button>
+  <button *ngIf="userData.isExsited()" (click)="logout()" mat-menu-item>{{"logout" | translate}}</button>
+  <button *ngIf="!(userData.isExsited())" [routerLink]="['/login']" mat-menu-item>{{"login" | translate}}</button>
+  <button *ngIf="!(userData.isExsited())" [routerLink]="['/register']" mat-menu-item>{{"register" | translate}}</button>
+</mat-menu>
+
+<mat-slide-toggle
+    (change)="onChange($event)"
+    [(ngModel)]="lang"
+    class="langToggle">
+    {{translate.language}}
+</mat-slide-toggle>
+
+<button class="leftButton" mat-icon-button [matMenuTriggerFor]="appMenu">
+  <mat-icon>more_vert</mat-icon>
+</button>
+</div>

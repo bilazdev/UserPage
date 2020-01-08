@@ -1,0 +1,25 @@
+.userList{
+  margin-top:10%;
+}
+.userListSide{
+  margin-top:20%;
+  width: 400px
+
+}
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #CFD0D2;
+}
+.flex-object {
+  margin: 30px;
+}
+.next{
+  margin: 20px;
+}
+.back{
+  margin: 20px;
+}
+.side{
+  margin: 10px;
+}

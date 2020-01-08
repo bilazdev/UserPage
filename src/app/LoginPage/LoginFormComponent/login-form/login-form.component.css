@@ -1,0 +1,11 @@
+.loginForm{
+  width: 50%;
+  position: fixed;
+  left: 35%;
+  top: 30%;
+}
+.block{
+  display: block;
+  width: 50%;
+  background-color: #303030;
+}

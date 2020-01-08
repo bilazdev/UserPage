@@ -1,0 +1,17 @@
+<form class="profileForm" [formGroup]="profileFormGroup" (ngSubmit)="profileSubmit(loginFormGroup.value)">
+  <Label>{{"profile" | translate}}</Label>
+  <button class="editButton" mat-raised-button color="primary" (click)="editClick()">{{"edit" | translate}}</button>
+  <mat-form-field class="block" appearance="outline">
+    <mat-label>{{"email"  | translate}}</mat-label>
+  <input  matInput placeholder="example@xxx.com" id="email" type="text" formControlName="email">
+  </mat-form-field>
+
+  <mat-form-field class="block" appearance="outline">
+    <mat-label>{{"password"  | translate}}</mat-label>
+  <input  matInput placeholder="123aaaAAA!@#" id="password" type="password" formControlName="password">
+  </mat-form-field>
+
+
+<button *ngIf="this.edit.value" mat-flat-button	class="button" type="submit">{{"submit"  | translate}}</button>
+
+</form>

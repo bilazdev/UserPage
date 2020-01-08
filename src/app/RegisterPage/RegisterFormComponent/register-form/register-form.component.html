@@ -1,0 +1,18 @@
+<form *ngIf="!userData.isExsited()" class="registerForm" [formGroup]="registerFormGroup" (ngSubmit)="registerSubmit(registerFormGroup.value)">
+    <Label>{{"register"  | translate}} :</Label>
+    <mat-form-field class="block" appearance="outline">
+      <mat-label>{{"email"  | translate}}</mat-label>
+    <input matInput placeholder="example@xxx.com" id="email" type="text" required formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field class="block" appearance="outline">
+      <mat-label>{{"password"  | translate}}</mat-label>
+    <input class="input" matInput placeholder="123aaaAAA!@#" id="password" type="password" required formControlName="password">
+    </mat-form-field>
+
+
+  <button mat-flat-button		 class="button" type="submit">{{"submit"  | translate}}</button>
+
+</form>
+
+<h1 *ngIf="userData.isExsited()" class="registerForm">{{"sorry"  | translate}}</h1>

@@ -1,0 +1,16 @@
+<div class="flex-container" [class.userList]="!isASide" [class.userListSide]="isASide">
+<app-user-item *ngFor="let user of data"
+[id]="user.id"
+[email] = "user.email"
+[first_name] = "user.first_name"
+[last_name] = "user.last_name"
+[imageURL] = "user.avatar"
+[class.flex-object]="!isASide"
+[class.side]="isASide">
+</app-user-item>
+<button *ngIf="isASide" class="next" (click)="next()" mat-raised-button color="primary">{{"next" | translate}}</button>
+<button *ngIf="isASide" class="back" (click)="back()" mat-raised-button color="primary">{{"back" | translate}}</button>
+</div>
+
+<button *ngIf="!isASide" class="next" (click)="next()" mat-raised-button color="primary">{{"next"| translate}}</button>
+<button *ngIf="!isASide" class="back" (click)="back()" mat-raised-button color="primary">{{"back" | translate}}</button>

@@ -1,0 +1,25 @@
+.rightButton{
+  position: fixed;
+  left:20px;
+  top:20px;
+}
+.leftButton{
+  position: fixed;
+  right:20px;
+  top:20px;
+}
+.person{
+  background-size: 100px;
+}
+.navBar{
+  background-color: #9C27B0;
+  position: fixed;
+  top:0px;
+  width: 100%;
+  height: 80px;
+}
+.langToggle{
+  position: fixed;
+  left:200px;
+  top:25px;
+}

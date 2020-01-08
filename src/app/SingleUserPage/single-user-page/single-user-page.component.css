@@ -1,0 +1,22 @@
+.sideList{
+  width: 410px;
+  height: 100%;
+  overflow: scroll;
+  position: relative;
+  left:0;
+  margin: 0;
+}
+.content {
+  position: absolute;
+  display: inline;
+  top:80px;
+  margin: 10px;
+  width: 100%;
+}
+.contentLeft{
+  left:400px;
+  width: 100%;
+}
+.displayNone{
+  visibility: hidden;
+}
