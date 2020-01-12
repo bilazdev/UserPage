@@ -15,7 +15,6 @@ lang: string;
    }
 
   delete(){
-    console.log("deleted succssesfully")
     localStorage.clear();
     //localStorage.setItem("email",null);
     //localStorage.setItem("password",null);
@@ -31,7 +30,6 @@ lang: string;
 
   }
   isExsited(){
-    console.log(localStorage.getItem("email"),localStorage.getItem("password"),localStorage.getItem("token"))
     if(localStorage.getItem("email")== null && localStorage.getItem("password")== null && localStorage.getItem("token")== null){
       return false;
     } else return true;

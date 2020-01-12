@@ -1,5 +1,5 @@
 <form *ngIf="!userData.isExsited()" class="registerForm" [formGroup]="registerFormGroup" (ngSubmit)="registerSubmit(registerFormGroup.value)">
-    <Label>{{"register"  | translate}} :</Label>
+    <Label>{{"register"  | translate}} :</Label> <label *ngIf="wrong" class="wrong">{{"wrong" | translate}}</label>
     <mat-form-field class="block" appearance="outline">
       <mat-label>{{"email"  | translate}}</mat-label>
     <input matInput placeholder="example@xxx.com" id="email" type="text" required formControlName="email">
@@ -11,7 +11,7 @@
     </mat-form-field>
 
 
-  <button mat-flat-button		 class="button" type="submit">{{"submit"  | translate}}</button>
+  <button mat-flat-button class="button" type="submit" [disabled]="disableSubmitButton">{{"submit"  | translate}}</button>
 
 </form>
 

@@ -27,7 +27,8 @@ export class TranslateService {
         sure: 'متأكد؟',
         undo: 'إعادة',
         submit: 'إدخال',
-        sorry: 'خطأ في الصفحة'
+        sorry: 'خطأ في الصفحة',
+        wrong: 'خطأ في البريد الالكتروني أو كلمة المرور'
       },
     },
     en: {
@@ -49,7 +50,9 @@ export class TranslateService {
         sure: 'Sure?',
         undo: 'Undo',
         submit: 'ٍSubmit',
-        sorry: 'Error in this page'
+        sorry: 'Error in this page',
+        wrong: 'Wrong email or password'
+
 
 
 
@@ -58,7 +61,6 @@ export class TranslateService {
   }
   translate(key: string): string {
     if (this.dictionary[this.language] != null) {
-      console.log(this.dictionary[this.language].values[key],key,"asdaeeee");
       return this.dictionary[this.language].values[key]
     }
   }

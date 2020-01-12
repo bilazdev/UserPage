@@ -9,7 +9,6 @@ export class DeleteUserService   {
   deleteUsers(ids:number[]){
     ids.forEach(id => {
       this.http.delete(`https://reqres.in/api/users/${id}`);
-      console.log(id);
     });
   }
 }

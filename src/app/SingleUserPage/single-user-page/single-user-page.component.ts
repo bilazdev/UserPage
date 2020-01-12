@@ -15,7 +15,6 @@ export class SingleUserPageComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.innerWidth = window.innerWidth;
-    console.log(this.innerWidth)
   }
   ngOnInit() {
     this.onResize(event);

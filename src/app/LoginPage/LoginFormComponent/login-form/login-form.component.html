@@ -1,5 +1,6 @@
 <form *ngIf="!userData.isExsited()" class="loginForm" [formGroup]="loginFormGroup" (ngSubmit)="loginSubmit(loginFormGroup.value)">
-  <Label>{{"login" | translate}} :</Label>
+  <Label>{{"login" | translate}} :</Label> 
+  <label *ngIf="wrong" class="wrong">{{"wrong" | translate}}</label>
   <mat-form-field class="block" appearance="outline">
     <mat-label>{{"email"  | translate}}</mat-label>
   <input matInput placeholder="example@xxx.com" id="email" type="text" [formControl]="email" required formControlName="email">
@@ -9,6 +10,7 @@
     <mat-label>{{"password" | translate}}</mat-label>
   <input  matInput placeholder="123aaaAAA!@#" id="password" type="password" required formControlName="password">
   </mat-form-field>
-<button mat-flat-button	class="button" type="submit">{{"submit" | translate}}</button>
+<button mat-flat-button	class="button" type="submit" (click)="submit()" [disabled]="disableSubmitButton">{{"submit" | translate}}</button>
 </form>
+
 <h1 *ngIf="userData.isExsited()" class="loginForm">{{"sorry" | translate}}</h1>

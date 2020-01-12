@@ -8,7 +8,6 @@ import { TranslateService } from './translate.service';
 export class TranslatePipe implements PipeTransform {
   constructor(private translationService: TranslateService) {}
   transform(value: any, args?: any): any {
-    console.log(this.translationService.translate(value),value)
     return this.translationService.translate(value)
   }
 

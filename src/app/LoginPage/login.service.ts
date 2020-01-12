@@ -7,25 +7,17 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class LoginService {
-
+  check;
   constructor(private http: HttpClient,private userData:UserDataService,private router:Router) { }
-  doRegister(email: string,password: string){
+  doLogin(email: string,password: string){
     const messege = {
       email:"eve.holt@reqres.in",
       password:"pistol"
     }
-    this.http.post('https://reqres.in/api/login', {
+    return this.http.post('https://reqres.in/api/login', {
             password: password,
             email: email
           })
-        .subscribe(
-            (res:any) => {
-                this.userData.update(email,password,res.token)
-                this.router.navigateByUrl('/profile');
-
-              },
-            err => {
-            console.log("Error occured");
-        })
+        
   }
 }

@@ -10,6 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ListUsersPageComponent implements OnInit {
   data:any;
+  numberOfUsers;
+  loaded;
   @Input() isASide:boolean = false;
   currentPage = new BehaviorSubject<number>(1);
   constructor(private fetchUsers:FetchUsersService) { }
@@ -17,10 +19,12 @@ export class ListUsersPageComponent implements OnInit {
   ngOnInit() {
     this.fetchUsers.fetchUsers(this.currentPage.value).subscribe((res:any)=>{
       this.data = res.data;
+      this.numberOfUsers = Array(6).fill(0).map((x,i)=>i);
+      this.loaded = false;
     });
-    console.log(this.data);
       this.currentPage.subscribe(()=>{
         this.fetchUsers.fetchUsers(this.currentPage.value).subscribe((res:any)=>{
+          this.loaded = true;
           if(res.data.length != 0)
             this.data = res.data;
           else{

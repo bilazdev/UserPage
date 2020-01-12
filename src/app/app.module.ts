@@ -17,7 +17,9 @@ import {MatButtonModule,
   MatCardModule,
   MatCardTitle,
   MatSlideToggle,
-  MatSlideToggleModule} from '@angular/material';
+  MatSlideToggleModule,
+  MatSpinner,
+  MatProgressSpinnerModule} from '@angular/material';
 import { NavBarComponent } from './NavBar/nav-bar/nav-bar.component';
 import { LoginFormComponent } from './LoginPage/LoginFormComponent/login-form/login-form.component';
 import { ProfilePageComponent } from './ProfilePage/profile-page/profile-page.component';
@@ -52,7 +54,8 @@ import { TranslatePipe } from './Translation/translate.pipe'
     MatMenuModule,
     MatCardModule,
     MatSlideToggleModule,
-    FormsModule
+    FormsModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

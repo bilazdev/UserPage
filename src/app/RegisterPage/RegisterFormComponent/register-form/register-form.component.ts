@@ -11,8 +11,9 @@ import { Router } from '@angular/router';
 })
 export class RegisterFormComponent implements OnInit {
   registerFormGroup;
-
-  constructor(private formBuilder: FormBuilder,private registerService: RegisterService,private userData:UserDataService) {
+  disableSubmitButton;
+  wrong;
+  constructor(private formBuilder: FormBuilder,private registerService: RegisterService,private userData:UserDataService,private router:Router) {
     this.registerFormGroup = this.formBuilder.group({
       email: '',
       password: ''
@@ -20,11 +21,24 @@ export class RegisterFormComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.disableSubmitButton = false;
+    this.wrong = false;
   }
 
   registerSubmit(params){
-    this.registerService.doRegister(params.email,params.password);
-    console.log(params.email,"  ",params.password);
+    this.disableSubmitButton = true;
+
+    this.registerService.doRegister(params.email,params.password).subscribe(
+      (res:any) => {
+          this.userData.update(params.email,params.password,res.token);
+          this.router.navigateByUrl('/profile');
+          this.disableSubmitButton = false;
+        },
+      err => {
+      this.disableSubmitButton = false;
+      this.wrong = true;
+      console.log("Error occured");
+  });
   }
 
 }

@@ -13,18 +13,10 @@ export class RegisterService {
       email:"eve.holt@reqres.in",
       password:"pistol"
     }
-    this.http.post('https://reqres.in/api/register', {
+    return this.http.post('https://reqres.in/api/register', {
             password: password,
             email: email
           })
-        .subscribe(
-            (res:any) => {
-                this.userData.update(email,password,res.token);
-                console.log("nav nav")
-                this.router.navigateByUrl('/profile');
-              },
-            err => {
-            console.log("Error occured");
-        })
+        
   }
 }
